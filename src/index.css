@@ -1,13 +1,118 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 90vh;
+}
+.leaflet-container {
+  width: 100wh; 
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.select-player {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+
+.gender-icon {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  transform: scale(.5);
+}
+
+.gender-icon:nth-child(1) {
+  margin-top: -30%;
+}
+.gender-icon:nth-child(2) {
+  margin-top: -55%;
+}
+
+.gender-icon:hover {
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1000px) {
+  .select-player {
+    flex-direction: row-reverse;
+  }
+  .gender-icon {
+    transform: scale(.8);
+  }
+  .gender-icon:nth-child(2) {
+    margin-top: 0%;
+  }
+  .gender-icon:nth-child(1) {
+    margin-top: 0%;
+  }
+}
+
+.trails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  overflow: hidden;
+  margin:auto;
+  overflow: hidden;
+}
+.select-trail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 35%;
+  top: 10%;
+  margin:auto;
+  overflow-y: scroll;
+  padding-top: 12%;
+}
+.trail-select {
+  flex: 1;
+  background-image: url("../src/images/panorama.webp");
+  background-position: 0% 20%;
+  width: 90%;
+  border-radius: 10px;
+  border: solid 1px rgb(39, 108, 139);
+  cursor: pointer;
+  margin-bottom: 1%;
+  color: rgb(100, 100, 100);
+}
+
+.trail-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 70%;
+  width: 60%;
+  margin:auto;
+  overflow: hidden;
+}
+
+.navigation {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 90%;
+}
+
+.info {
+  position: absolute;
+  top: 5%;
+  left: 85%;
+  z-index: 1000;
+  transform: scale(1.7);
+  
 }
