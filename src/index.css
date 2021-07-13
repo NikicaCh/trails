@@ -1,8 +1,40 @@
+@font-face {
+  font-family: 'Lemonade';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Lemonade Stand D'), url('./Lemonade\ Stand\ D.otf') format('opentype');
+}
+
 body {
-  height: 90vh;
+  width: 99%;
+  height: 99vh;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif; */
+  font-family: "Lemonade";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url('./images/bg.jpg');
+  color: #369c36;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: block;
+  position: fixed;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+* {
+  font-family: 'Lemonade', serif;
+}
+html * {
+  font-family: 'Lemonade', serif;
+}
+
+html *::selection {
+  background: transparent;
 }
 .leaflet-container {
-  width: 100wh; 
+  width: 100vh; 
   height: 100vh;
 }
 
@@ -60,29 +92,42 @@ body {
   margin:auto;
   overflow: hidden;
 }
+.trails h1 {
+  font-size: 2vw;
+}
 .select-trail {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 100%;
-  height: 35%;
-  top: 10%;
+  width: 70%;
+  height: 40%;
+  top: 15%;
   margin:auto;
   overflow-y: scroll;
-  padding-top: 12%;
+  padding-top: 5%;
+  border-radius: 25px;
+  background: linear-gradient(to bottom right,#30c450, #096327);
+  padding: 1% 2% 3% 2%;
+}
+
+.select-trail::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.select-trail {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 .trail-select {
-  flex: 1;
-  background-image: url("../src/images/panorama.webp");
-  background-position: 0% 20%;
-  width: 90%;
+  background-image: url('./images/bg.jpg');
+  width: 80%;
+  height: 4vw;
   border-radius: 10px;
-  border: solid 1px rgb(39, 108, 139);
   cursor: pointer;
   margin-bottom: 1%;
   color: rgb(100, 100, 100);
+  margin: auto;
 }
 
 .trail-details {
@@ -114,5 +159,676 @@ body {
   left: 85%;
   z-index: 1000;
   transform: scale(1.7);
-  
+}
+
+.home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.home h1 {
+  font-family: 'Lemonade', serif;
+}
+
+
+.home img {
+  flex: 1;
+  width: 75vw;
+  height: 75vw;
+}
+
+.options {
+  position: absolute;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 70%;
+}
+
+.dots {
+  position: absolute;
+  left: 95%;
+  top: 1%;
+  z-index: 10000;
+  cursor: pointer;
+}
+.message {
+  font-family: 'Lemonade', serif;
+  text-transform: lowercase;
+  font-weight: 600;
+  font-size: larger;
+  text-align: center;
+  background: #369c36;
+  color: white;
+  padding: .1% .2%;
+  word-wrap: break-word;
+  margin: 3% 25%;
+  font-size: .5vw;
+}
+
+
+.first-button {
+  transform: scale(1.2);
+}
+.second-button {
+  margin: 17% 5% 5%;
+  transform: scale(1.3);
+}
+
+@media screen and (min-width: 1000px) {
+  .home img {
+    width: 25vw;
+    height: 25vw;
+  }
+  .home h1 {
+    font-family: 'Lemonade', serif;
+    font-size: 3vw;
+  }
+  .message {
+    font-size: .9vw;
+  }
+  .first-button {
+    transform: scale(1);
+  }
+  .second-button {
+    margin: 5%;
+    transform: scale(1);
+  }
+}
+.sponsors {
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  height: 50px;
+  margin-top: 1%;
+}
+
+.sponsors img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: auto
+}
+
+.map {
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+}
+
+.memory-game {
+  position: relative;
+  height: 100vh;
+  width: 99vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.no-overflow {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.playground {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 40%;
+  margin: auto;
+}
+
+.header {
+  height: 40px;
+  font-size: 4vw;
+  position: relative;
+  margin: 2% auto;
+}
+
+@media (max-width: 360px) { /*nikica*/
+  .playground {
+    width: 95%;
+    height: 65%;
+    margin-top: 10%;
+  }
+  .gameOverScreen-back {
+    width: 150%;
+    height: 65%;
+    margin-top: 10%;
+  }
+}
+
+.header .textfield {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+  color: #369c36;
+  line-height: 60px;
+  width: 130px;
+  text-align: left;
+  padding-left: 25px;
+}
+
+.instruction-holder {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  pointer-events: none;
+}
+
+.instruction-holder .bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  background: transparent;
+  background-color: #a3a3a3;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.instructionsScreen {
+  width: 70vw;
+  height: 90vh;
+  margin: 30px auto;
+  font-size: 30px;
+  line-height: 60px;
+  color: #369c36;
+  background-color: #fff;
+  padding: 15px;
+  font-weight: bold;
+  box-shadow: 5px 5px rgba(178, 176, 176, 0.3);
+  position: fixed;
+  margin-left: 15vw;
+  top: 0px;
+  pointer-events: all;
+  overflow: auto;
+}
+
+.instructions_btn {
+  font-size: 60px;
+  color: #369c36;
+  position: absolute;
+  right: 25px;
+  font-family: auto;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.info_btn {
+  font-size: 60px;
+  color: #369c36;
+  position: absolute;
+  right: 10%;
+  font-family: auto;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.card {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  text-align: center;
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+  padding: 5px;
+}
+
+.card.mode1 {
+  width: 25%;
+}
+
+.card.mode2 {
+  width: calc(100% / 6);
+}
+
+.card.mode3 {
+  width: calc(100% / 7);
+}
+
+.card img {
+  height: 100%;
+  width: 100%;
+  border: 1px solid grey;
+}
+
+.card.mode1 {
+  height: calc((90vh - 100px) / 4);
+}
+
+.card.mode2 {
+  height: calc((90vh - 100px) / 4);
+}
+
+.card.mode3 {
+  height: calc((90vh - 100px) / 4);
+}
+
+.restartScreenBg {
+  position: relative;
+  width: 99vw;
+  height: 99vh;
+  margin: auto;
+  background: transparent;
+  font-family: "Lemonade";
+}
+
+.restartScreenBg .bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0%;
+  opacity: 0.5;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.restartScreen {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  background: linear-gradient(to bottom right,#339b49, #096327);
+  border-radius: 25px;
+  font-family: "Lemonade";
+  display: flex;
+}
+.levels {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 40%;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.level {
+  margin: 2px;
+  height: 10%;
+}
+.level img {
+  position: relative;
+  width: 15vw;
+  height: 10vw;
+  margin: 2px 2px 25px 2px;
+}
+.mainHeader {
+  font-size: 4vw;
+  position: relative;
+  margin: 2% auto;
+}
+
+.level button {
+  padding: 10px 30px;
+  background-color: transparent;
+  border: 2px dashed #fff;
+  color: #fff;
+  margin: auto;
+  margin: 0px 35px;
+  border-radius: 13px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.level button:hover {
+  background-color: #fff;
+  color: #369c36;
+}
+
+button {
+  font-family: "Lemonade";
+  border: none;
+}
+@media (max-width: 360px)  { /*nikica*/
+  .restartScreen {
+    height: 80%;
+    width: 95%;
+    top: 5%
+  }
+  .levels {
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    left: 2.5%;
+    top: 15%;
+  }
+  .level {
+    margin-bottom: 10%;
+    height: auto;
+    width: 60%;
+  }
+  .level img {
+    margin: 2px 2px 2px 2px;
+    width: 23vw;
+    height: 19vw;
+  }
+  .restartScreen span {
+    font-size: 6vw;
+  }
+  .mainHeader {
+    font-size: 8vw;
+  }
+  .headerStart {
+    top: -5%;
+  }
+}
+
+.results {
+  color: #3d345f;
+  width: 100%;
+  width: 100% !important;
+  margin-bottom: 2%;
+}
+
+.results span {
+  color: #3d345f;
+  margin: auto;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+
+
+.headerStart {
+  color: #fff;
+  width: 100%;
+  width: 100% !important;
+  font-size: 3vw;
+  position: absolute;
+  top: 10%;
+  left: 0%;
+}
+
+.headerLevel {
+  color: #fff;
+  width: 100%;
+  width: 100% !important;
+  font-size: 300%;
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+
+/* flip card end */
+
+.flip-card {
+  background-color: transparent;
+  width: 25%;
+  height: 25%;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card.change1 .flip-card-inner, .flip-card.change3 .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: white;
+  color: white;
+  text-align: center;
+  display : flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.flip-card-front img {
+  width: 6.5vw;
+  height: 6.5vw;
+  border: none;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+/* flip card end */
+
+/* Game Over Screen */
+.gameOver-main{
+  margin: auto;
+    margin-top: calc((100vh - 90vw) / 2 + 45vw - ((100vh - 90vw) / 2 + 40vw) / 3);
+    width: 60vw;
+    height: 90vw;
+    background: aliceblue;
+    z-index: 99;
+}
+.gameOverScreen-back {
+    margin: auto;
+    width: 70vw;
+    height: 70%;
+    background: aliceblue;
+    z-index: 100;
+}
+.newGame-header {
+  color: #369c36;
+  width: 100%;
+  width: 100% !important;
+  font-size: 300%;
+  margin-top: 7%;
+  margin-bottom: 3%;
+}
+.newGame-btn {
+  padding: 10px 30px;
+  background-color: transparent;
+  border-radius: 3%;
+  border: 2px dashed #fff;
+  margin: auto;
+  margin: 30px 55px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background: linear-gradient(90deg, rgba(109, 108, 113, 1) 0%, rgba(49, 145, 185, 0.9332107843137255) 35%, rgba(79, 201, 171, 0.8911939775910365) 100%);
+}
+
+
+@media (max-width: 768px) {
+  .playground.mode1 {
+    max-width: calc((90vh - 80px) / 4 * 0.707 * 4);
+  }
+  .playground.mode2 {
+    max-width: calc((90vh - 80px) / 6 * 0.707 * 4);
+  }
+  .playground.mode3 {
+    max-width: calc((90vh - 80px) / 7 * 0.707 * 4);
+  }
+  .card.mode1 {
+    height: calc((90vh - 80px) / 4);
+  }
+  .card.mode2 {
+    height: calc((90vh - 80px) / 6);
+  }
+  .card.mode3 {
+    height: calc((90vh - 80px) / 7);
+  }
+  .card img {
+    height: 100%;
+    width: 100%;
+  }
+  .card.mode1 img {
+    height: 100%;
+  }
+  .card.mode2 img {
+    height: 100%;
+  }
+  .card.mode3 img {
+    height: 100%;
+  }
+  .card.mode1, .card.mode2, .card.mode3 {
+    width: 25%;
+  }
+  .header .textfield {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    color: #369c36;
+    line-height: 60px;
+    width: 100px;
+    text-align: left;
+    padding-left: 15px;
+  }
+  .instructions_btn {
+    font-size: 45px;
+    color: #369c36;
+    position: absolute;
+    right: 15px;
+    font-family: auto;
+    cursor: pointer;
+  }
+  .info_btn {
+    font-size: 45px;
+    color: #369c36;
+    position: absolute;
+    right: 55px;
+    font-family: auto;
+    cursor: pointer;
+  }
+  .restartScreen .button-holder {
+    margin: auto;
+    margin-top: calc( (100vh - 110vw) / 2 + 57.7vw - ((100vh - 110vw) / 2 + 75vw) / 5 - 20px);
+    width: 90vw;
+    z-index: 100;
+  }
+  .results {
+    color: rgb(62, 65, 88);
+    margin: auto;
+    width: 100%;
+    width: 100% !important;
+    margin-bottom: 26px;
+  }
+  .restartScreen button {
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 2px dashed #fff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .headerLevel {
+    color: #fff;
+    width: 100%;
+    width: 100% !important;
+    font-size: 230%; 
+    font-size: 3vw;
+    position: absolute;
+    top: 10%;
+    left: 0%;
+  }
+}
+
+@media (max-width: 480px) {
+  .restartScreen .button-holder {
+    /* margin-top: calc((100vh - 58vw) / 2 + 57.7vw - 82px); */
+    z-index: 100;
+  }
+  .restartScreen button {
+    margin: 0px 10px;
+    font-size: 13px;
+  }
+  .restartScreen .button-holder {
+    margin: auto;
+    margin-top: calc( (100vh - 78vw) / 2 + 57.7vw - ((100vh - 78vw) / 2 + 57.7vw) / 6 - 10px);
+    width: 90vw;
+    margin-top: 270px;
+    z-index: 100;
+  }
+  .results {
+    color: #fff;
+    margin: auto;
+    width: 100%;
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+  .headerLevel {
+    color: #fff;
+    width: 100%;
+    width: 100% !important;
+    font-size: 180%;
+    margin-top: -85px;
+    margin-bottom: 2%;
+  }
+}
+
+.melon-logo {
+  position: absolute;
+  bottom: 20px;
+  width: 7%;
+  right: 2%;
+}
+
+.velo-logo {
+  position: absolute;
+  bottom: 5px;
+  width: 7%;
+  right: 10%;
+}
+
+.eco-logo {
+  position: absolute;
+  bottom: 5px;
+  width: 7%;
+  right: 17%;
+  margin-top: 20px;
+}
+
+.swiss-logo {
+  position: absolute;
+  bottom: 20px;
+  width: 7%;
+  right: 27%;
+}
+
+.second-logo {
+  position: absolute;
+  bottom: 5px;
+  height: 60px;
+  width: 75px;
+  right: 170px;
+}
+
+.third-logo {
+  position: absolute;
+  bottom: 5px;
+  height: 60px;
+  width: 75px;
+  right: 265px;
 }

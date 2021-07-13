@@ -69,7 +69,7 @@ const Map: React.FC<any> = (props) => {
 
 
     return (
-        <div className="App">
+        <div className="map">
             <MapContainer
             center={position} 
             zoom={13} 

@@ -59,7 +59,10 @@ const ChooseTrails: React.FC<any> = (props) => {
             <div className="trail-details">
                 <p>Оддалечени сте околу:{Math.round(distance)} км од почетната точка на стазата.</p>
                 {selected.difficulty !== undefined ? <p>Тежина: {selected.difficulty}</p> : undefined }
-                <Button variant="contained" color="primary" onClick={() => props.openMap(true)}> OPEN MAP </Button>
+                <Button style={{
+                            backgroundColor: "#369c36",
+                            fontSize: "1.4vw",
+                        }} variant="contained" color="primary" onClick={() => props.openMap(true)}> OPEN MAP </Button>
             </div>
         </div>
     )
